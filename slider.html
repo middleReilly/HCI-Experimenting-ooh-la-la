@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        <title>HCI test site</title>
+    </head>
+    
+    <body>
+        
+        <header>
+            HCI Test - Slider</br></br></br>
+        </header>
+
+        <div>
+            <audio id="noise" src="03-White-Noise-10min.mp3" preload="auto"></audio>
+            <input type="range" id="volumeSlider" min="0" max="1" step="0.1" value="1" onchange="setVolume()">
+            <label for="volumeSlider">Volume</label>
+            <br><br>
+            <button id="playPause">Play Audio</button>
+        </div>
+
+        <script>
+            const audio = document.getElementById("noise");
+            const playPause = document.getElementById("playPause");
+            const volumeSlider = document.getElementById("volumeSlider");
+
+            playPause.addEventListener("click", () => {
+            if (audio.paused) {
+                audio.play();
+                playPause.textContent = "Pause Audio";
+            } else {
+                audio.pause();
+                playPause.textContent = "Play Audio";
+            }
+            });
+
+            function setVolume() {
+                audio.volume = volumeSlider.value;
+            }
+
+            audio.addEventListener("loadedmetadata", () => {
+                setVolume();
+            });
+        </script>
+
+    </body>
+
+</html>
