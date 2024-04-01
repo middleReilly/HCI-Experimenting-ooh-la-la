@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        <title>HCI test site</title>
+    </head>
+    
+    <body>
+        
+        <header>
+            HCI Test - Radio</br></br></br>
+        </header>
+
+        <audio id="my-audio" src="03-White-Noise-10min.mp3">
+            <source src="03-White-Noise-10min.mp3" type="audio/mpeg" />
+            <p>Download<a href="03-White-Noise-10min.mp3">03-White-Noise-10min.mp3</a></p>
+        </audio>
+          
+          <div>
+            <input type="radio" name="volume" id="volume-0" value="0">
+            0
+            
+            <input type="radio" name="volume" id="volume-1" value="0.1">
+            1
+            
+            <input type="radio" name="volume" id="volume-2" value="0.2">
+            2
+
+            <input type="radio" name="volume" id="volume-3" value="0.3">
+            3
+
+            <input type="radio" name="volume" id="volume-4" value="0.4">
+            4
+
+            <input type="radio" name="volume" id="volume-5" value="0.5">
+            5
+
+            <input type="radio" name="volume" id="volume-6" value="0.6">
+            6
+
+            <input type="radio" name="volume" id="volume-7" value="0.7">
+            7
+
+            <input type="radio" name="volume" id="volume-8" value="0.8">
+            8
+
+            <input type="radio" name="volume" id="volume-9" value="0.9">
+            9
+
+            <input type="radio" name="volume" id="volume-10" value="1">
+            10
+            
+            <br><br>
+            <button id="play">play</button>
+            <button id="pause">pause</button>
+          </div>
+
+        <script>
+            window.onload = () => {
+            const audio = document.getElementById("my-audio");
+            const play = document.getElementById("play");
+            const pause = document.getElementById("pause");
+
+            // Get the radio buttons
+            const volumeZero = document.getElementById("volume-0");
+            const volumeOne = document.getElementById("volume-1");
+            const volumeTwo = document.getElementById("volume-2");
+            const volumeThree = document.getElementById("volume-3");
+            const volumeFour = document.getElementById("volume-4");
+            const volumeFive = document.getElementById("volume-5");
+            const volumeSix = document.getElementById("volume-6");
+            const volumeSeven = document.getElementById("volume-7");
+            const volumeEight = document.getElementById("volume-8");
+            const volumeNine = document.getElementById("volume-9");
+            const volumeTen = document.getElementById("volume-10");
+
+            // Set the initial volume
+            audio.volume = 1;
+
+            // Associate functions with the 'onclick' events
+            play.onclick = playAudio;
+            pause.onclick = pauseAudio;
+
+            // Associate functions with the 'onclick' event for the radio buttons
+            volumeZero.onclick = () => {
+                audio.volume = 0;
+            };
+            volumeOne.onclick = () => {
+                audio.volume = 0.1;
+            };
+            volumeTwo.onclick = () => {
+                audio.volume = 0.2;
+            };
+            volumeThree.onclick = () => {
+                audio.volume = 0.3;
+            };
+            volumeFour.onclick = () => {
+                audio.volume = 0.4;
+            };
+            volumeFive.onclick = () => {
+                audio.volume = 0.5;
+            };
+            volumeSix.onclick = () => {
+                audio.volume = 0.6;
+            };
+            volumeSeven.onclick = () => {
+                audio.volume = 0.7;
+            };
+            volumeEight.onclick = () => {
+                audio.volume = 0.8;
+            };
+            volumeNine.onclick = () => {
+                audio.volume = 0.9;
+            };
+            volumeTen.onclick = () => {
+                audio.volume = 1;
+            };
+
+            function playAudio() {
+                audio.play();
+            }
+
+            function pauseAudio() {
+                audio.pause();
+            }
+            };
+        </script>
+
+    </body>
+
+</html>
