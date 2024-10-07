@@ -1,4 +1,4 @@
-# HCI-Experimenting-ooh-la-la
+# HCI-Experimenting
 
 Steps:
 
